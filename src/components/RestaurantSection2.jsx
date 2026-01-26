@@ -32,7 +32,6 @@ export default function RestaurantSection2() {
         <>
         <div className="w-[80%] mx-auto p-4">
               <h1 className="mb-4 text-2xl font-bold ">Restaurants with online food delivery in Kolkata</h1>
-              <button className="h-9 rounded-2xl border border-[rgba(2,6,12,0.15)] px-3">Sort By</button>
         
               {data.length == 0 && <Shimmer />}
               <div

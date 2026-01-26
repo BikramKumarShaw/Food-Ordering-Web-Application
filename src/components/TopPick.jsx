@@ -11,7 +11,7 @@ export default function TopPick(data) {
                 
                     {data.length == 0 && <Shimmer />}
                     <div style={{ scrollbarWidth: "none" }} className="grid grid-rows-1 grid-flow-col auto-cols-max overflow-x-auto gap-3">
-                        {data?.data?.carousel?.map((ele) => (<TopPickCard key={ele.bannerId} ele={ele}></TopPickCard>))}
+                        {data?.data?.carousel?.map((ele) => (<TopPickCard key={ele.bannerId} data={data} ele={ele}></TopPickCard>))}
                     </div>
                     
                 </div>

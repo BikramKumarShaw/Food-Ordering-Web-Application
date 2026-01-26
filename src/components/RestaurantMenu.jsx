@@ -1,11 +1,12 @@
 import { useParams } from "react-router"
 import { useEffect, useState } from "react";
+import { Link } from "react-router"
 import { menuData } from "../Utils/RestaurantFoodData";
 import RestaurantHeader1 from "./RestaurantHeader1"
 import Tabs from "./Tabs";
 import Menucard from "./Menucard";
 import Deals from "./Deals";
-import TopPick from "./TopPick";
+// import TopPick from "./TopPick";
 
 export default function RestaurantMenu () {
 
@@ -33,6 +34,8 @@ export default function RestaurantMenu () {
         fetchData();
         
     }, [])
+
+    console.log(data?.data?.cards?.[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards)
         
     return (
         <>
@@ -91,9 +94,9 @@ export default function RestaurantMenu () {
                 <p>{"<--"} MENU {"-->"}</p>
             </div>
 
-            <div className="h-12 w-200 mx-auto flex flex-col items-center">
-                <p className="h-full w-full text-center leading-11 rounded-xl bg-gray-200 text-gray-600 font-bold ">Search for dishes</p>
-            </div>
+            <Link state={{items: data?.data?.cards?.[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards || []}} to='/searchitem' className="h-12 w-200 mx-auto flex flex-col items-center">
+                <p className="h-full w-full text-center leading-11 rounded-xl bg-gray-200 text-gray-600 font-bold cursor-pointer">Search for dishes</p>
+            </Link>
 
             {data.length != 0 && <Menucard data={data?.data?.cards?.[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards}></Menucard>}
         </>
@@ -101,4 +104,3 @@ export default function RestaurantMenu () {
 }
 
 
-// https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=22.5643&lng=88.3693&restaurantId=651011&catalog_qa=undefined&submitAction=ENTER

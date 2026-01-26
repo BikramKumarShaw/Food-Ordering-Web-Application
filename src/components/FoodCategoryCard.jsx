@@ -2,7 +2,7 @@ import { addItems, quantityIncrease, quantityDecrease } from "../Stored/CartSlic
 import {useDispatch} from 'react-redux';
 import { useSelector } from "react-redux";
 
-export default function FoodCategoryCard ({data, selected}) {
+export default function FoodCategoryCard ({data}) {
 
     const dispatch = useDispatch();
 

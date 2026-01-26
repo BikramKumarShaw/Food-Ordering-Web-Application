@@ -1,4 +1,5 @@
 import { useSelector } from "react-redux"
+import { Link } from "react-router"
 
 export default function RestaurantHeader1() {
 
@@ -17,11 +18,11 @@ export default function RestaurantHeader1() {
                     </div>
 
                     <div className="grid grid-rows-1 grid-cols-[repeat(6,max-content)] gap-x-16">
-                        <span>Swiggy Corporate</span>
-                        <span>Search</span>
-                        <span>Offers</span>
-                        <span>Help</span>
-                        <span>Sign In</span>
+                        <Link to="/comingsoon" target="_blank">Swiggy Corporate</Link>
+                        <Link to="/comingsoon" target="_blank">Search</Link>
+                        <Link to="/comingsoon" target="_blank">Offers</Link>
+                        <Link to="/comingsoon" target="_blank">Help</Link>
+                        <Link to="/comingsoon" target="_blank">Sign In</Link>
                         <span>Cart({`${cartCount}`})</span>
                     </div>
                 </div>

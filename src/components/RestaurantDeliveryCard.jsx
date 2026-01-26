@@ -3,7 +3,7 @@ import {Link} from 'react-router'
 export default function RestaurantDeliveryCard ({ ele }) {
   
   return (
-    <Link to={"/city/kolkata/" + ele.info.id} className="transform transition duration-200 hover:scale-95" >
+    <Link to={"/city/kolkata/" + ele.info.id} target="_blank" className="transform transition duration-200 hover:scale-95" >
       <div className="w-67">
 
         <div className="relative w-full h-45 rounded-2xl overflow-hidden">  

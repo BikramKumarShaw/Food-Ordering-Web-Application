@@ -3,7 +3,7 @@ import { Link } from "react-router";
 export default function ChainCard({ ele }) {
 
   return (
-    <Link to={"/city/kolkata/" + ele.info.id}>
+    <Link to={"/city/kolkata/" + ele.info.id} target="_blank">
       <div className="w-67">
 
         <div className="relative w-full h-45 rounded-2xl overflow-hidden">  

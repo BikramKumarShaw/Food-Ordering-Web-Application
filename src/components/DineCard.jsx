@@ -1,7 +1,9 @@
+import { Link } from "react-router"
+
 export default function DineCard({ data }) {
   return (
     <div className="w-81.5 rounded-2xl overflow-hidden border border-0.5 border-gray-200">
-    <a href={data.cta.link}>
+    <Link to="/comingsoon" target="_blank">
       <div className="relative">
         
         <img className="w-full h-47 object-cover" src={"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/" + data.info.mediaFiles[0].url}/>
@@ -81,7 +83,9 @@ export default function DineCard({ data }) {
         </div>
       </div>
 
-    </a>
+    </Link>
     </div>
   );
 }
+
+// href={data.cta.link}
