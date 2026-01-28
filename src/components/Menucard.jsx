@@ -8,6 +8,14 @@ export default function Menucard({data}) {
 
     const filterData = data.filter((items) => ('title' in items?.card?.card && !('carousel' in items?.card?.card)));
 
+    let topPickData;
+    if (selected === 'veg'){
+        topPickData = data?.[1]?.card?.card?.carousel?.filter((ele) => ele.dish.info.itemAttribute.vegClassifier === "VEG")
+    }
+    if (selected === 'nonveg'){
+        topPickData = data?.[1]?.card?.card?.carousel?.filter((ele) => ele.dish.info.itemAttribute.vegClassifier === "NONVEG")
+    }
+
     return (
 
         <>
@@ -17,10 +25,10 @@ export default function Menucard({data}) {
         </div>
         <div className="w-200 mx-auto my-6 h-[0.5px] bg-gray-300"></div> 
 
-        <TopPick data={data?.[1]?.card?.card}></TopPick>
+        <TopPick data={selected && topPickData || data?.[1]?.card?.card?.carousel}></TopPick>
 
         <div className="w-200 mx-auto">
-            {filterData.map((item) => <FoodCategory key={item?.card?.card?.title} data={item.card.card} />)}
+            {filterData.map((item) => ( <FoodCategory key={item?.card?.card?.title} data={item.card.card} selected={selected} />))}
         </div>
         </>
     )

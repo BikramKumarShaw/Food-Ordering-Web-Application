@@ -6,7 +6,6 @@ import RestaurantHeader1 from "./RestaurantHeader1"
 import Tabs from "./Tabs";
 import Menucard from "./Menucard";
 import Deals from "./Deals";
-// import TopPick from "./TopPick";
 
 export default function RestaurantMenu () {
 
@@ -34,8 +33,6 @@ export default function RestaurantMenu () {
         fetchData();
         
     }, [])
-
-    console.log(data?.data?.cards?.[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards)
         
     return (
         <>
